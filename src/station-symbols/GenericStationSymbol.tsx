@@ -1,12 +1,12 @@
 import * as React from "react";
-import { GenericRailSymbol, RailSymbolProps } from "../GenericRailSymbol";
+import { GeneralRailSymbol, RailSymbolProps } from "../GeneralRailSymbol";
 
 
-export class GenericStationSymbol extends GenericRailSymbol<StationSymbolProps> {
+export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> {
     render() {
         return (
             <div>
-                <h1>STATION</h1>
+                <h1>GenericStationSymbol Info</h1>
                 <ul>
                     <li>Company: {this.line[0]}</li>
                     <li>Line: {this.line[1]}</li>

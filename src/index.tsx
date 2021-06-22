@@ -6,7 +6,7 @@ import StationSymbol from "./StationSymbol";
 // this is for testing only
 ReactDOM.render(
     <React.StrictMode>
-        <StationSymbol></StationSymbol>
+        <StationSymbol line="ts" number={0}></StationSymbol>
     </React.StrictMode>,
     document.getElementById('root')
 );

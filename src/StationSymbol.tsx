@@ -1,13 +1,18 @@
 import * as React from "react";
 import stationSymbolsIndex from "./station-symbols";
-import GenericRailSymbol from "./GenericRailSymbol";
+import GenericStationSymbol from "./station-symbols/GenericStationSymbol";
+import GeneralRailSymbol from "./GeneralRailSymbol";
 
-export class StationSymbol extends React.Component {
+export class StationSymbol extends GenericStationSymbol {
     render() {
-        let ts = "generic"
-        let Comp = stationSymbolsIndex[ts];
+        let SelectedCompanyStationSymbol = stationSymbolsIndex[this.line[0]];
         return(
-            <Comp line="ts:c" number={1}></Comp>
+            <SelectedCompanyStationSymbol
+                line={this.props.line}
+                number={this.props.number}
+                background={this.props.background}
+                color={this.props.color}
+            />
         );
     }
 }

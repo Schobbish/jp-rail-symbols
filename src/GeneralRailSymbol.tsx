@@ -3,7 +3,7 @@ import { railData } from "./railData";
 
 
 // https://stackoverflow.com/a/39124219 but lazy
-export class GenericRailSymbol<T extends RailSymbolProps> extends React.Component<T> {
+export class GeneralRailSymbol<T extends RailSymbolProps> extends React.Component<T> {
     /** Part before 1st colon is the company; rest is the line */
     line: Array<string>;
     background: string;
@@ -22,7 +22,7 @@ export class GenericRailSymbol<T extends RailSymbolProps> extends React.Componen
         if (companyData && (!this.props.background || !this.props.color)) {
             // if company is in railData and both background and color props not assigned,
             // try "all" key then specified line
-            let lineData = companyData.all ? companyData.all : companyData[this.line[1]];
+            let lineData = companyData.lines.all ? companyData.lines.all : companyData.lines[this.line[1]];
 
             if (lineData) {
                 // if something worked back there then overwrite background and color
@@ -36,7 +36,7 @@ export class GenericRailSymbol<T extends RailSymbolProps> extends React.Componen
     render() {
         return (
             <div>
-                <h1>RAIL</h1>
+                <h1>GeneralRailSymbol Info</h1>
                 <ul>
                     <li>Company: {this.line[0]}</li>
                     <li>Line: {this.line[1]}</li>
@@ -60,4 +60,4 @@ export type RailSymbolProps = {
 }
 
 
-export default GenericRailSymbol;
+export default GeneralRailSymbol;
