@@ -36,21 +36,23 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
 
         return (
             <div>
-                <h1>GenericStationSymbol Info</h1>
-                <ul>
-                    <li>Company: {this.line[0]}</li>
-                    <li>Line: {this.line[1]}</li>
-                    <li>Number: {this.number}</li>
-                    <li>Symbol Color: {this.symbolColor}</li>
-                    <li>Text Color: {this.textColor}</li>
-                    <li>Size: {this.size}</li>
-                </ul>
                 <div className="station-symbol generic-station-symbol">
                     <span style={backgroundSpanStyle}>
                         &nbsp;
                         <span style={textSpanStyle}>{this.line[1] + this.number}</span>
                         &nbsp;
                     </span>
+                </div>
+                <div className="debug-info">
+                    <h2>GenericStationSymbol Info</h2>
+                    <ul>
+                        <li>Company: {this.line[0]}</li>
+                        <li>Line: {this.line[1]}</li>
+                        <li>Number: {this.number}</li>
+                        <li>Symbol Color: {this.symbolColor}</li>
+                        <li>Text Color: {this.textColor}</li>
+                        <li>Size: {this.size}</li>
+                    </ul>
                 </div>
             </div>
         );

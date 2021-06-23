@@ -15,6 +15,29 @@
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
+        <div id="form">
+            <h1>Rail Symbol Test</h1>
+            <label for="company">Company: </label>
+            <select name="company" id="company"></select>
+            <br />
+            <label for="line">Line abbreviation: </label>
+            <select name="line" id="line"></select>
+            <input type="text" id="other-line" placeholder="other field" />
+            <br />
+            <label for="number">Station number (optional): </label>
+            <input type="number" name="number" id="number" value="1" />
+            <br />
+            <label for="symbol-color">Symbol color override (optional): </label>
+            <input type="text" name="symbol-color" id="symbol-color" />
+            <br />
+            <label for="text-color">Text color override (optional): </label>
+            <input type="text" name="text-color" id="text-color" />
+            <br />
+            <label for="size">Size (optional): </label>
+            <input type="text" name="size" id="size" value="10rem" />
+            <br />
+            <input type="submit" value="Render" id="submit" />
+        </div>
+        <div id="root" style="padding-top: 3rem"></div>
     </body>
 </html>

@@ -81,7 +81,7 @@ export const railData: RailDataType = {
         }
     },
     TN: {
-        fullCompanyName: "Toei",
+        fullCompanyName: "Toei Nippori-Toneri Liner",
         lines: {
             all: {
                 fullLineName: "Nippori-Toneri Liner",

@@ -27,13 +27,13 @@ export class GeneralRailSymbol<T extends RailSymbolProps> extends React.Componen
         this.size = this.props.size ? this.props.size : "1rem";
 
         let companyData = railData[this.line[0]];
+        // if company is in railData and one of color props not assigned,
+        // try "all" key then specified line
         if (companyData && (!this.props.symbolColor || !this.props.textColor)) {
-            // if company is in railData and one of color props not assigned,
-            // try "all" key then specified line
             let lineData = companyData.lines.all ? companyData.lines.all : companyData.lines[this.line[1]];
 
+            // if something worked back there then overwrite colors
             if (lineData) {
-                // if something worked back there then overwrite colors
                 if (!this.props.symbolColor)
                     this.symbolColor = lineData.symbolColor;
                 if (!this.props.textColor)
