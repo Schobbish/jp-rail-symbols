@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/jp-rail-symbols/static/js/main.72dba14c.chunk.js",
+    "main.js.map": "/jp-rail-symbols/static/js/main.72dba14c.chunk.js.map",
+    "runtime-main.js": "/jp-rail-symbols/static/js/runtime-main.93d192af.js",
+    "runtime-main.js.map": "/jp-rail-symbols/static/js/runtime-main.93d192af.js.map",
+    "static/js/2.c654e3da.chunk.js": "/jp-rail-symbols/static/js/2.c654e3da.chunk.js",
+    "static/js/2.c654e3da.chunk.js.map": "/jp-rail-symbols/static/js/2.c654e3da.chunk.js.map",
+    "index.html": "/jp-rail-symbols/index.html",
+    "static/js/2.c654e3da.chunk.js.LICENSE.txt": "/jp-rail-symbols/static/js/2.c654e3da.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.93d192af.js",
+    "static/js/2.c654e3da.chunk.js",
+    "static/js/main.72dba14c.chunk.js"
+  ]
+}
