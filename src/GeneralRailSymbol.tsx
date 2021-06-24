@@ -21,7 +21,7 @@ export class GeneralRailSymbol<T extends RailSymbolProps> extends React.Componen
     constructor(props: T) {
         super(props);
 
-        this.line = this.props.line.split(":", 2);
+        this.line = this.props.line.split(":");
         this.symbolColor = this.props.symbolColor ? this.props.symbolColor : "#000";
         this.textColor = this.props.textColor ? this.props.textColor : "#FFF";
         this.size = this.props.size ? this.props.size : "1rem";
