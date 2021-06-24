@@ -14,17 +14,17 @@ export class GeneralRailSymbol<T extends RailSymbolProps> extends React.Componen
     lineColor: string;
     /** Actual text color to use based on default value, props, and line. */
     textColor: string;
-    /** Actual size to use based on default value and props. */
-    size: string;
+    /** Actual height to use based on default value and props. */
+    height: string;
 
-    /** Constructor determines colors and size to use based on props. */
+    /** Constructor determines colors and height to use based on props. */
     constructor(props: T) {
         super(props);
 
         this.line = this.props.line.split(":");
         this.lineColor = this.props.lineColor ? this.props.lineColor : "#000";
         this.textColor = this.props.textColor ? this.props.textColor : "#FFF";
-        this.size = this.props.size ? this.props.size : "1rem";
+        this.height = this.props.height ? this.props.height : "1rem";
 
         let companyData = railData[this.line[0]];
         // if company is in railData and one of color props not assigned,
@@ -78,7 +78,7 @@ export type RailSymbolProps = {
     textColor?: string,
 
     /** CSS length value to assign to the height of the symbol. @default 1rem */
-    size?: string;
+    height?: string;
 };
 
 

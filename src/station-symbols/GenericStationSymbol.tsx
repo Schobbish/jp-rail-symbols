@@ -5,6 +5,8 @@ import { GeneralRailSymbol, RailSymbolProps } from "../GeneralRailSymbol";
 /**
  * Boring default station symbol also used as base for other station symbols.
  *
+ * Note that height determines the font size here.
+ *
  * Based on https://en.wikipedia.org/wiki/Template:RouteBox
  */
 export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> {
@@ -23,7 +25,7 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
         const backgroundSpanStyle: CSSProperties = {
             display: "inline",
             fontFamily: "sans-serif",
-            fontSize: this.size,
+            fontSize: this.height,
             backgroundColor: this.lineColor,
             border: `0.1em solid`,
             borderColor: this.lineColor
@@ -52,7 +54,7 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
                         <li>Number: {this.number}</li>
                         <li>Line Color: {this.lineColor}</li>
                         <li>Text Color: {this.textColor}</li>
-                        <li>Size: {this.size}</li>
+                        <li>Height: {this.height}</li>
                     </ul>
                 </div>
             </div>

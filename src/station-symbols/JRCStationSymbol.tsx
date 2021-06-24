@@ -12,42 +12,42 @@ export class JRCStationSymbol extends GenericStationSymbol {
         const borderSpanStyle: CSSProperties = {
             display: "inline-block",
             position: "relative",
-            width: `calc(${this.size} * 21 / 25)`,
-            height: `calc(${this.size} * 21 / 25)`,
+            width: `calc(${this.height} * 21 / 25)`,
+            height: `calc(${this.height} * 21 / 25)`,
             fontFamily: "sans-serif",
             fontWeight: "bold",
             verticalAlign: "middle",
             backgroundColor: "#FFF",
-            border: `solid calc(${this.size} * 2 / 25)`,
+            border: `solid calc(${this.height} * 2 / 25)`,
             borderColor: this.lineColor
         };
         const lineBackgroundSpanStyle: CSSProperties = {
             position: "absolute",
-            top: `calc(${this.size} * -1 / 25)`,
-            left: `calc(${this.size} * -1 / 25)`,
-            width: `calc(${this.size} * 23 / 25)`,
-            height: `calc(${this.size} * 37 / 100)`,
+            top: `calc(${this.height} * -1 / 25)`,
+            left: `calc(${this.height} * -1 / 25)`,
+            width: `calc(${this.height} * 23 / 25)`,
+            height: `calc(${this.height} * 37 / 100)`,
             backgroundColor: this.lineColor,
         };
         const lineSpanStyle: CSSProperties = {
             position: "absolute",
-            top: `calc(${this.size} * -1 / 100)`,
-            left: `calc(${this.size} * 13 / 100)`,
-            width: `calc(${this.size} * 33 / 50)`,
-            height: `calc(${this.size} * 17 / 50)`,
-            fontSize: `calc(${this.size} * 17 / 50)`,
-            lineHeight: `calc(${this.size} * 17 / 50)`,
+            top: `calc(${this.height} * -1 / 100)`,
+            left: `calc(${this.height} * 13 / 100)`,
+            width: `calc(${this.height} * 33 / 50)`,
+            height: `calc(${this.height} * 17 / 50)`,
+            fontSize: `calc(${this.height} * 17 / 50)`,
+            lineHeight: `calc(${this.height} * 17 / 50)`,
             textAlign: "center",
             color: this.textColor
         };
         const numberSpanStyle: CSSProperties = {
             position: "absolute",
-            bottom: `calc(${this.size} / 50)`,
+            bottom: `calc(${this.height} / 50)`,
             left: 0,
-            width: `calc(${this.size} * 21 / 25)`,
-            height: `calc(${this.size} * 12 / 25)`,
-            fontSize: `calc(${this.size} * 3 / 5)`,
-            lineHeight: `calc(${this.size} /2)`,
+            width: `calc(${this.height} * 21 / 25)`,
+            height: `calc(${this.height} * 12 / 25)`,
+            fontSize: `calc(${this.height} * 3 / 5)`,
+            lineHeight: `calc(${this.height} /2)`,
             textAlign: "center",
             color: "#000"
         };
@@ -71,7 +71,7 @@ export class JRCStationSymbol extends GenericStationSymbol {
                         <li>Number: {this.number}</li>
                         <li>Line Color: {this.lineColor}</li>
                         <li>Text Color: {this.textColor}</li>
-                        <li>Size: {this.size}</li>
+                        <li>Height: {this.height}</li>
                     </ul>
                 </div>
             </div>

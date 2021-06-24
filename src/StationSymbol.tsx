@@ -20,7 +20,7 @@ export class StationSymbol extends GenericStationSymbol {
                 number={this.props.number}
                 lineColor={this.props.lineColor}
                 textColor={this.props.textColor}
-                size={this.props.size}
+                height={this.props.height}
             />
         );
     }

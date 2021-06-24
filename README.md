@@ -14,14 +14,15 @@ Both `StationSymbol` and `LineSymbol` require a `line` prop for the line name an
 <companyAbbr>:<lineAbbr>[:<stationAbbr>]
 ```
 
-* `companyAbbr` is the abbreviation of the company which operates the line. Many of the abbreviations are the same as the ones used in Wikipedia's symbol templates and can basically be found [here](https://en.wikipedia.org/wiki/Template:SNList) in the Shortcut column (take off the "SN" though). Some of them I made up myself and I should probably put them here but they can also be found in [`src/rail-data.ts`](src/rail-data.ts) since the full names are included there. If the abbreviation is not recognized, a generic symbol (just a colored rectangle) will be used.
+* `companyAbbr` is the abbreviation of the company which operates the line. Many of the abbreviations are the same as the ones used in Wikipedia's symbol templates and can basically be found [here](https://en.wikipedia.org/wiki/Template:SNList) in the Shortcut column (take off the "SN" though). Some of them I made up myself and I should probably put them here but they can also be found in [`src/rail-data.ts`](src/rail-data.ts) since the full names are included there. If the abbreviation is not recognized, a generic symbol (just a colored rectangle) will be used. (Sometimes generic symbols are used on purpose because some companies don't have stylized symbols. If they have data in [`src/rail-data.ts`](src/rail-data.ts), then those colors will still be used.)
 * `lineAbbr` is the abbreviation used for the line. I think all of them will be official abbreviations so they can be found somewhere on Wikipedia or again in [`src/rail-data.ts`](src/rail-data.ts). If the line is not recognized, `lineColor` will be set to black and `textColor` will be set to white.
 * `stationAbbr` is only used for major JR East stations which have an additional black border around the symbol and an abbreviation for that station. These are not hard-coded anywhere.
 
-In addition to `line` and `number`, you can also set `lineColor`, `textColor`, and `size`.
+In addition to `line` and `number`, you can also set `lineColor`, `textColor`, and `height`.
 
-* `lineColor` sets/overrides the main color of the symbol, i.e. the line color. For some symbols, you can't override this completely or at all because more than one color is used.
-* `textColor` sets/overrides the color used for the line abbreviation on the symbol. If the station number uses the same color, this also changes that. But some symbols use different colors for the line and number, and this will only change the line.
+* `lineColor` sets/overrides the main color of the symbol, i.e. the line color and defaults to `#000` if the line is unknown. For some symbols, you can't override this completely or at all because more than one color is used. Any CSS color value may be used here.
+* `textColor` sets/overrides the color used for the line abbreviation on the symbol and defaults to `#FFF` if the line is unknown. If the station number uses the same color, this also changes that. But some symbols use different colors for the line and number, and this will only change the line. Any CSS color value may be used here.
+* `height` sets the height of the symbol and defaults to `1rem`. For generic symbols, this actually sets the font size.
 
 ## Adding More Symbols
 If you want to add or change the lines for a company which already has a symbol in here, just edit [`src/rail-data.ts`](src/rail-data.ts). If you want to add a new company, use one of the existing ones as a template (except `GenericStationSymbol`) and add it to the corresponding folder. Then you'll need to make an import in the folder's `index.ts` and also put it in the exported object there.

@@ -13,42 +13,42 @@ export class TSStationSymbol extends GenericStationSymbol {
             display: "inline-block",
             position: "relative",
             margin: "1px",
-            width: `calc(${this.size} * 3 / 4)`,
-            height: `calc(${this.size} * 3 / 4)`,
-            fontSize: `calc(${this.size} * 3 / 8)`,
+            width: `calc(${this.height} * 3 / 4)`,
+            height: `calc(${this.height} * 3 / 4 - 2px)`, // off by 2px somehow
+            fontSize: `calc(${this.height} * 3 / 8)`,
             fontFamily: "sans-serif",
             lineHeight: "100%",
             verticalAlign: "middle",
             backgroundColor: "#FFF",
-            border: `calc(${this.size} / 8) solid`,
+            border: `calc(${this.height} / 8) solid`,
             borderRadius: "50%",
             borderColor: this.lineColor
         };
         const lineSpanStyle: CSSProperties = {
             position: "absolute",
             top: this.line[1] && this.line[1][1]
-                ? `calc(${this.size} / 25)` : `calc(${this.size} / 50)`,
+                ? `calc(${this.height} / 25)` : `calc(${this.height} / 50)`,
             left: 0,
-            width: `calc(${this.size} * 3 / 4)`,
+            width: `calc(${this.height} * 3 / 4)`,
             height: this.line[1] && this.line[1][1]
-                ? `calc(${this.size} * 3 / 10)` : `calc(${this.size} * 8 / 25)`,
+                ? `calc(${this.height} * 3 / 10)` : `calc(${this.height} * 8 / 25)`,
             fontSize: this.line[1] && this.line[1][1]
-                ? `calc(${this.size} * 3 / 10)` : `calc(${this.size} * 8 / 25)`,
+                ? `calc(${this.height} * 3 / 10)` : `calc(${this.height} * 8 / 25)`,
             fontWeight: "bold",
             lineHeight: this.line[1] && this.line[1][1]
-                ? `calc(${this.size} * 3 / 10)` : `calc(${this.size} * 8 / 25)`,
+                ? `calc(${this.height} * 3 / 10)` : `calc(${this.height} * 8 / 25)`,
             textAlign: "center",
             color: this.textColor
         };
         const numberSpanStyle: CSSProperties = {
             position: "absolute",
-            bottom: `calc(${this.size} / 20)`,
+            bottom: `calc(${this.height} / 20)`,
             left: 0,
-            width: `calc(${this.size} * 3 / 4)`,
-            height: `calc(${this.size} * 19 / 50)`,
-            fontSize: `calc(${this.size} * 19 / 50)`,
+            width: `calc(${this.height} * 3 / 4)`,
+            height: `calc(${this.height} * 19 / 50)`,
+            fontSize: `calc(${this.height} * 19 / 50)`,
             fontWeight: "bold",
-            lineHeight: `calc(${this.size} * 19 / 50)`,
+            lineHeight: `calc(${this.height} * 19 / 50)`,
             textAlign: "center",
             color: this.textColor
         };
@@ -69,7 +69,7 @@ export class TSStationSymbol extends GenericStationSymbol {
                         <li>Number: {this.number}</li>
                         <li>Line Color: {this.lineColor}</li>
                         <li>Text Color: {this.textColor}</li>
-                        <li>Size: {this.size}</li>
+                        <li>Height: {this.height}</li>
                     </ul>
                 </div>
             </div>

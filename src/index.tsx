@@ -48,7 +48,7 @@ function renderSymbolFromForm(): void {
                     number={parseInt(`${$("#number").val()}`)}
                     lineColor={`${$("#line-color").val()}`}
                     textColor={`${$("#text-color").val()}`}
-                    size={`${$("#size").val()}`}
+                    height={`${$("#height").val()}`}
                 />
             );
         } else {
@@ -100,3 +100,5 @@ $(() => {
     $("#company").on("change", updateLineChoices);
     $("#submit").on("click", renderSymbolFromForm);
 });
+
+export { LineSymbol, StationSymbol };
