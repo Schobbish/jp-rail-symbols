@@ -45,7 +45,9 @@ export class GeneralRailSymbol<T extends RailSymbolProps> extends React.Componen
 export type RailSymbolProps = {
     /**
      * String representing the company and the line of the station.
-     * Must use format `<companyAbbr>:<lineAbbr>` (@see rail-data.ts ).
+     *  Must use format `<companyAbbr>:<lineAbbr>` (@see rail-data.ts ).
+     *  JRE station symbols may have another component `stationAbbr` to render
+     *  the station header used for major stations (@see JRStationSymbol ).
      *
      * In `StationSymbol` and `LineSymbol`, `companyAbbr` will determine which
      *  component is ultimately used to render the symbol. If omitted,
@@ -69,12 +71,18 @@ export type RailSymbolProps = {
     /**
      * CSS color value to assign to the text color.
      *  @default #FFF or inferred from prop `line` (so this can overwrite that).
+     *
+     * If the line name and number are different colors, this prop determines
+     *  the line name color.
+     *
+     * Some symbols (mainly the ones for small companies) use custom or more
+     *  complex backgrounds, and those can't be overriden here.
      */
     textColor?: string,
 
     /** CSS length value to assign to the height of the symbol. @default 1rem */
-    size?: string
-}
+    size?: string;
+};
 
 
 export default GeneralRailSymbol;

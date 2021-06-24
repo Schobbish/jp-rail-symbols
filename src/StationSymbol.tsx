@@ -10,11 +10,11 @@ import GenericStationSymbol from "./station-symbols/GenericStationSymbol";
  *  `GenericStationSymbol` is selected.
  */
 export class StationSymbol extends GenericStationSymbol {
-    render() {
+    render(): JSX.Element {
         let SelectedStationSymbol = stationSymbolsIndex[this.line[0]]
             ? stationSymbolsIndex[this.line[0]] : stationSymbolsIndex.generic;
 
-        return(
+        return (
             <SelectedStationSymbol
                 line={this.props.line}
                 number={this.props.number}

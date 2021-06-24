@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta
-            name="description"
-            content="japan rail symbols test"
-        />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-        <title>japan rail symbols test</title>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="form">
-            <h1>Rail Symbol Test</h1>
-            <label for="company">Company: </label>
-            <select name="company" id="company"></select>
-            <br />
-            <label for="line">Line abbreviation: </label>
-            <select name="line" id="line"></select>
-            <input type="text" id="other-line" placeholder="other field" />
-            <br />
-            <label for="number">Station number (optional): </label>
-            <input type="number" name="number" id="number" value="1" />
-            <br />
-            <label for="symbol-color">Symbol color override (optional): </label>
-            <input type="text" name="symbol-color" id="symbol-color" />
-            <br />
-            <label for="text-color">Text color override (optional): </label>
-            <input type="text" name="text-color" id="text-color" />
-            <br />
-            <label for="size">Size (optional): </label>
-            <input type="text" name="size" id="size" value="10rem" />
-            <br />
-            <input type="submit" value="Render" id="submit" />
-        </div>
-        <div id="root" style="padding-top: 3rem"></div>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="japan rail symbols test" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>japan rail symbols test</title>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="form">
+        <h1>Rail Symbol Test</h1>
+        <label for="company">Company: </label>
+        <select name="company" id="company"></select>
+        <input type="text" id="other-company" placeholder="other field" />
+        <br />
+        <label for="line">Line abbreviation: </label>
+        <select name="line" id="line"></select>
+        <input type="text" id="other-line" placeholder="other field" />
+        <br />
+        <label for="number">Station number (optional): </label>
+        <input type="number" name="number" id="number" value="17" />
+        <br />
+        <label for="station">Station (for JRE only): </label>
+        <select name="station" id="station">
+            <option value="none">none</option>
+            <option value="ABN">ABN - Akabane</option>
+            <option value="AKB">AKB - Akihabara</option>
+            <option value="EBS">EBS - Ebisu</option>
+            <option value="HMC">HMC - Hamamatsuch&#333;</option>
+            <option value="IKB">IKB - Ikebukuro</option>
+            <option value="KND">KND - Kanda</option>
+            <option value="KWS">KWS - Kawasaki</option>
+            <option value="MKG">MKG - Musashi-Kosugi</option>
+            <option value="NPR">NPR - Nippori</option>
+            <option value="OFN">OFN - &#332;funa</option>
+            <option value="OMY">OMY - &#332;miya</option>
+            <option value="OSK">OSK - &#332;saki</option>
+            <option value="SBY">SBY - Shibuya</option>
+            <option value="SGW">SGW - Shinagawa</option>
+            <option value="SJK" selected>SJK - Shinjuku</option>
+            <option value="SMB">SMB - Shimbashi</option>
+            <option value="TGW">TGW - Takanawa Gateway</option>
+            <option value="TTK">TTK - Totsuka</option>
+            <option value="TYO">TYO - T&#333;ky&#333;</option>
+            <option value="UEN">UEN - Ueno</option>
+            <option value="URW">URW - Urawa</option>
+            <option value="YHM">YHM - Yokohama</option>
+            <option value="other">Other...</option>
+        </select>
+        <input type="text" id="other-station" placeholder="other field" />
+        <br />
+        <label for="symbol-color">Symbol color override (optional): </label>
+        <input type="text" name="symbol-color" id="symbol-color" />
+        <br />
+        <label for="text-color">Text color override (optional): </label>
+        <input type="text" name="text-color" id="text-color" />
+        <br />
+        <label for="size">Size (optional): </label>
+        <input type="text" name="size" id="size" value="10rem" />
+        <br />
+        <input type="submit" value="Render" id="submit" />
+    </div>
+    <div id="root" style="padding-top: 3rem"></div>
+</body>
+
 </html>

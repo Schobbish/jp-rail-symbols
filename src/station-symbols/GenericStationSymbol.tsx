@@ -19,7 +19,7 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
         this.number = this.props.number.toString().padStart(2, "0");
     }
 
-    render() {
+    render(): JSX.Element {
         const backgroundSpanStyle: CSSProperties = {
             display: "inline",
             fontFamily: "sans-serif",
@@ -27,12 +27,12 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
             backgroundColor: this.symbolColor,
             border: `0.1em solid`,
             borderColor: this.symbolColor
-        }
+        };
         const textSpanStyle: CSSProperties = {
             fontWeight: "bold",
             color: this.textColor,
             whiteSpace: "nowrap"
-        }
+        };
 
         return (
             <div>
@@ -46,6 +46,7 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
                 <div className="debug-info">
                     <h2>GenericStationSymbol Info</h2>
                     <ul>
+                        <li>Full line string: {this.props.line}</li>
                         <li>Company: {this.line[0]}</li>
                         <li>Line: {this.line[1]}</li>
                         <li>Number: {this.number}</li>
@@ -61,8 +62,8 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
 // extend RailSymbolProps to require a station number
 type StationSymbolProps = RailSymbolProps & {
     /** Two-digit number for the station (may need to be changed to string) */
-    number: number
-}
+    number: number;
+};
 
 
 export default GenericStationSymbol;
