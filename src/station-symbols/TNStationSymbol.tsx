@@ -21,7 +21,7 @@ export class TNStationSymbol extends GenericStationSymbol {
             verticalAlign: "middle",
             border: `calc(${this.size} * 2 / 25) solid`,
             backgroundColor: "#FFF",
-            borderColor: this.symbolColor,
+            borderColor: this.lineColor,
             borderRadius: `calc(${this.size} * 3 / 20)`
         };
         const innerBorderSpanStyle: CSSProperties = {
@@ -73,7 +73,7 @@ export class TNStationSymbol extends GenericStationSymbol {
                         <li>Company: {this.line[0]}</li>
                         <li>Line: {this.line[1]}</li>
                         <li>Number: {this.number}</li>
-                        <li>Symbol Color: {this.symbolColor}</li>
+                        <li>Line Color: {this.lineColor}</li>
                         <li>Text Color: {this.textColor}</li>
                         <li>Size: {this.size}</li>
                     </ul>

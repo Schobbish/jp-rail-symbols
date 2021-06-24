@@ -22,7 +22,7 @@ export class TSStationSymbol extends GenericStationSymbol {
             backgroundColor: "#FFF",
             border: `calc(${this.size} / 8) solid`,
             borderRadius: "50%",
-            borderColor: this.symbolColor
+            borderColor: this.lineColor
         };
         const lineSpanStyle: CSSProperties = {
             position: "absolute",
@@ -67,7 +67,7 @@ export class TSStationSymbol extends GenericStationSymbol {
                         <li>Company: {this.line[0]}</li>
                         <li>Line: {this.line[1]}</li>
                         <li>Number: {this.number}</li>
-                        <li>Symbol Color: {this.symbolColor}</li>
+                        <li>Line Color: {this.lineColor}</li>
                         <li>Text Color: {this.textColor}</li>
                         <li>Size: {this.size}</li>
                     </ul>

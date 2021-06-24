@@ -24,9 +24,9 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
             display: "inline",
             fontFamily: "sans-serif",
             fontSize: this.size,
-            backgroundColor: this.symbolColor,
+            backgroundColor: this.lineColor,
             border: `0.1em solid`,
-            borderColor: this.symbolColor
+            borderColor: this.lineColor
         };
         const textSpanStyle: CSSProperties = {
             fontWeight: "bold",
@@ -50,7 +50,7 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
                         <li>Company: {this.line[0]}</li>
                         <li>Line: {this.line[1]}</li>
                         <li>Number: {this.number}</li>
-                        <li>Symbol Color: {this.symbolColor}</li>
+                        <li>Line Color: {this.lineColor}</li>
                         <li>Text Color: {this.textColor}</li>
                         <li>Size: {this.size}</li>
                     </ul>

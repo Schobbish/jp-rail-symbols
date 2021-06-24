@@ -46,7 +46,7 @@ function renderSymbolFromForm(): void {
                 <StationSymbol
                     line={`${companyAbbr}:${lineAbbr}${stationAbbr}`}
                     number={parseInt(`${$("#number").val()}`)}
-                    symbolColor={`${$("#symbol-color").val()}`}
+                    lineColor={`${$("#line-color").val()}`}
                     textColor={`${$("#text-color").val()}`}
                     size={`${$("#size").val()}`}
                 />

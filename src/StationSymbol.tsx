@@ -18,7 +18,7 @@ export class StationSymbol extends GenericStationSymbol {
             <SelectedStationSymbol
                 line={this.props.line}
                 number={this.props.number}
-                symbolColor={this.props.symbolColor}
+                lineColor={this.props.lineColor}
                 textColor={this.props.textColor}
                 size={this.props.size}
             />

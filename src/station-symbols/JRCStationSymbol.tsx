@@ -19,7 +19,7 @@ export class JRCStationSymbol extends GenericStationSymbol {
             verticalAlign: "middle",
             backgroundColor: "#FFF",
             border: `solid calc(${this.size} * 2 / 25)`,
-            borderColor: this.symbolColor
+            borderColor: this.lineColor
         };
         const lineBackgroundSpanStyle: CSSProperties = {
             position: "absolute",
@@ -27,7 +27,7 @@ export class JRCStationSymbol extends GenericStationSymbol {
             left: `calc(${this.size} * -1 / 25)`,
             width: `calc(${this.size} * 23 / 25)`,
             height: `calc(${this.size} * 37 / 100)`,
-            backgroundColor: this.symbolColor,
+            backgroundColor: this.lineColor,
         };
         const lineSpanStyle: CSSProperties = {
             position: "absolute",
@@ -69,7 +69,7 @@ export class JRCStationSymbol extends GenericStationSymbol {
                         <li>Company: {this.line[0]}</li>
                         <li>Line: {this.line[1]}</li>
                         <li>Number: {this.number}</li>
-                        <li>Symbol Color: {this.symbolColor}</li>
+                        <li>Line Color: {this.lineColor}</li>
                         <li>Text Color: {this.textColor}</li>
                         <li>Size: {this.size}</li>
                     </ul>
