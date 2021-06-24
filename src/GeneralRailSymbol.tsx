@@ -47,7 +47,7 @@ export type RailSymbolProps = {
      * String representing the company and the line of the station.
      *  Must use format `<companyAbbr>:<lineAbbr>` (@see rail-data.ts ).
      *  JRE station symbols may have another component `stationAbbr` to render
-     *  the station header used for major stations (@see JRStationSymbol ).
+     *  the header station name used for major stations (@see JRStationSymbol ).
      *
      * In `StationSymbol` and `LineSymbol`, `companyAbbr` will determine which
      *  component is ultimately used to render the symbol. If omitted,

@@ -27,7 +27,7 @@ function getSelectValue(name: string): string {
 function renderSymbolFromForm(): void {
     // only render if line is not other or other field has a value
     if ($("#line").val() !== "other" || $("#other-line").val()) {
-        let symbolToRender: React.ReactElement;
+        let SymbolToRender: React.ReactElement;
         // build components of line prop
         let companyAbbr = getSelectValue("company");
         let lineAbbr = getSelectValue("line");
@@ -42,7 +42,7 @@ function renderSymbolFromForm(): void {
 
         // decide between station and line symbol based on number field
         if ($("#number").val()) {
-            symbolToRender = (
+            SymbolToRender = (
                 <StationSymbol
                     line={`${companyAbbr}:${lineAbbr}${stationAbbr}`}
                     number={parseInt(`${$("#number").val()}`)}
@@ -52,12 +52,12 @@ function renderSymbolFromForm(): void {
                 />
             );
         } else {
-            symbolToRender = (
+            SymbolToRender = (
                 <p>line symbol support coming later; please fill in station number</p>
             );
         }
 
-        ReactDOM.render(symbolToRender, document.getElementById("root"));
+        ReactDOM.render(SymbolToRender, document.getElementById("root"));
     } else {
         alert("Line is required!");
     }

@@ -66,18 +66,7 @@ export class TNStationSymbol extends GenericStationSymbol {
                         </span>
                     </span>
                 </div>
-                <div className="debug-info" style={{ marginTop: "3rem" }}>
-                    <h2>TNStationSymbol Info</h2>
-                    <ul>
-                        <li>Full line string: {this.props.line}</li>
-                        <li>Company: {this.line[0]}</li>
-                        <li>Line: {this.line[1]}</li>
-                        <li>Number: {this.number}</li>
-                        <li>Line Color: {this.lineColor}</li>
-                        <li>Text Color: {this.textColor}</li>
-                        <li>Height: {this.height}</li>
-                    </ul>
-                </div>
+                {this.DebugInfo("TNStationSymbol")}
             </div>
         );
     }
