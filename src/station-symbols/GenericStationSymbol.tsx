@@ -43,7 +43,7 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
                         &nbsp;
                     </span>
                 </div>
-                <div className="debug-info">
+                <div className="debug-info" style={{ marginTop: "3rem" }}>
                     <h2>GenericStationSymbol Info</h2>
                     <ul>
                         <li>Full line string: {this.props.line}</li>
