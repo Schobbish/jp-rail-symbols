@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import $ from "jquery";              // jquery only needed for test website
-// eslint-disable-next-line
 import LineSymbol from "./LineSymbol";
 import StationSymbol from "./StationSymbol";
 import railData from "./rail-data"; // also only needed for test website
@@ -53,7 +52,12 @@ function renderSymbolFromForm(): void {
             );
         } else {
             SymbolToRender = (
-                <p>line symbol support coming later; please fill in station number</p>
+                <LineSymbol
+                    line={`${companyAbbr}:${lineAbbr}${stationAbbr}`}
+                    lineColor={`${$("#line-color").val()}`}
+                    textColor={`${$("#text-color").val()}`}
+                    height={`${$("#height").val()}`}
+                />
             );
         }
 
