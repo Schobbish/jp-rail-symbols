@@ -9,7 +9,7 @@ import GenericStationSymbol from "./GenericStationSymbol";
  */
 export class TNStationSymbol extends GenericStationSymbol {
     render(): JSX.Element {
-        const outerBorderSpanStyle: CSSProperties = {
+        const outerborderStyle: CSSProperties = {
             display: "inline-block",
             position: "relative",
             width: `calc(${this.height} * 21 / 25)`,
@@ -24,7 +24,7 @@ export class TNStationSymbol extends GenericStationSymbol {
             borderColor: this.lineColor,
             borderRadius: `calc(${this.height} * 3 / 20)`
         };
-        const innerBorderSpanStyle: CSSProperties = {
+        const innerBorderStyle: CSSProperties = {
             position: "absolute",
             top: `calc(${this.height} * 3 / 50)`,
             left: `calc(${this.height} * 3 / 50)`,
@@ -58,12 +58,10 @@ export class TNStationSymbol extends GenericStationSymbol {
 
         return (
             <div>
-                <div className="station-symbol TN-station-symbol">
-                    <span style={outerBorderSpanStyle}>
-                        <span style={innerBorderSpanStyle}>
-                            <span style={lineSpanStyle}>NT</span>
-                            <span style={numberSpanStyle}>{this.number}</span>
-                        </span>
+                <div className="station-symbol TN-station-symbol" style={outerborderStyle}>
+                    <span style={innerBorderStyle}>
+                        <span style={lineSpanStyle}>NT</span>
+                        <span style={numberSpanStyle}>{this.number}</span>
                     </span>
                 </div>
                 {this.DebugInfo("TNStationSymbol")}

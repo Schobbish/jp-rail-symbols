@@ -49,6 +49,7 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
             display: "inline",
             fontFamily: "sans-serif",
             fontSize: this.height,
+            verticalAlign: "middle",
             backgroundColor: this.lineColor,
             border: `0.1em solid`,
             borderColor: this.lineColor
@@ -61,12 +62,10 @@ export class GenericStationSymbol extends GeneralRailSymbol<StationSymbolProps> 
 
         return (
             <div>
-                <div className="station-symbol generic-station-symbol">
-                    <span style={backgroundSpanStyle}>
-                        &nbsp;
-                        <span style={textSpanStyle}>{this.line[1] + this.number}</span>
-                        &nbsp;
-                    </span>
+                <div className="station-symbol generic-station-symbol" style={backgroundSpanStyle}>
+                    &nbsp;
+                    <span style={textSpanStyle}>{this.line[1] + this.number}</span>
+                    &nbsp;
                 </div>
                 {this.DebugInfo("GenericStationSymbol")}
             </div>

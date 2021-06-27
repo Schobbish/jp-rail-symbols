@@ -9,12 +9,12 @@ import GenericStationSymbol from "./GenericStationSymbol";
  */
 export class TSStationSymbol extends GenericStationSymbol {
     render(): JSX.Element {
-        const borderSpanStyle: CSSProperties = {
+        const borderStyle: CSSProperties = {
             display: "inline-block",
             position: "relative",
             margin: "1px",
             width: `calc(${this.height} * 3 / 4)`,
-            height: `calc(${this.height} * 3 / 4 - 2px)`, // off by 2px somehow
+            height: `calc(${this.height} * 3 / 4)`,
             fontSize: `calc(${this.height} * 3 / 8)`,
             fontFamily: "sans-serif",
             lineHeight: "100%",
@@ -55,11 +55,9 @@ export class TSStationSymbol extends GenericStationSymbol {
 
         return (
             <div>
-                <div className="station-symbol TS-station-symbol">
-                    <span style={borderSpanStyle}>
-                        <span style={lineSpanStyle}>{this.line[1]}</span>
-                        <span style={numberSpanStyle}>{this.number}</span>
-                    </span>
+                <div className="station-symbol TS-station-symbol" style={borderStyle}>
+                    <span style={lineSpanStyle}>{this.line[1]}</span>
+                    <span style={numberSpanStyle}>{this.number}</span>
                 </div>
                 {this.DebugInfo("TSStationSymbol")}
             </div>

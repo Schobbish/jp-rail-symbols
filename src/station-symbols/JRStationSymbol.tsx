@@ -15,7 +15,7 @@ import GenericStationSymbol from "./GenericStationSymbol";
 export class JRStationSymbol extends GenericStationSymbol {
     render(): JSX.Element {
         // decide whether to render header station or not
-        // due to different heights, borderSpanStyle, lineSpanStyle,
+        // due to different heights, borderStyle, lineSpanStyle,
         // numberSpanStyle are slightly different (unfortunately).
         if (this.line[2]) {
             const headerBorderStyle: CSSProperties = {
@@ -41,7 +41,7 @@ export class JRStationSymbol extends GenericStationSymbol {
                 fontSize: "110%",
                 color: "#FFF",
             };
-            const borderSpanStyle: CSSProperties = {
+            const borderStyle: CSSProperties = {
                 position: "absolute",
                 top: `calc(${this.height} * 4 / 15)`,
                 left: `calc(${this.height} / 15)`,
@@ -84,7 +84,7 @@ export class JRStationSymbol extends GenericStationSymbol {
                         style={headerBorderStyle}
                     >
                         <span style={stationSpanStyle}>{this.line[2]}</span>
-                        <span style={borderSpanStyle}>
+                        <span style={borderStyle}>
                             <span style={lineSpanStyle}>{this.line[1]}</span>
                             <span style={numberSpanStyle}>{this.number}</span>
                         </span>
@@ -93,7 +93,7 @@ export class JRStationSymbol extends GenericStationSymbol {
                 </div>
             );
         } else {
-            const borderSpanStyle: CSSProperties = {
+            const borderStyle: CSSProperties = {
                 display: "inline-block",
                 position: "relative",
                 margin: "1px",
@@ -132,11 +132,9 @@ export class JRStationSymbol extends GenericStationSymbol {
             };
             return (
                 <div>
-                    <div className="station-symbol JR-station-symbol">
-                        <span style={borderSpanStyle}>
-                            <span style={lineSpanStyle}>{this.line[1]}</span>
-                            <span style={numberSpanStyle}>{this.number}</span>
-                        </span>
+                    <div className="station-symbol JR-station-symbol" style={borderStyle}>
+                        <span style={lineSpanStyle}>{this.line[1]}</span>
+                        <span style={numberSpanStyle}>{this.number}</span>
                     </div>
                     {this.DebugInfo("JRStationSymbol")}
                 </div>

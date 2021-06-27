@@ -9,7 +9,7 @@ import GenericStationSymbol from "./GenericStationSymbol";
  */
 export class JRCStationSymbol extends GenericStationSymbol {
     render(): JSX.Element {
-        const borderSpanStyle: CSSProperties = {
+        const borderStyle: CSSProperties = {
             display: "inline-block",
             position: "relative",
             width: `calc(${this.height} * 21 / 25)`,
@@ -54,13 +54,11 @@ export class JRCStationSymbol extends GenericStationSymbol {
 
         return (
             <div>
-                <div className="station-symbol TN-station-symbol">
-                    <span style={borderSpanStyle}>
-                        <span style={lineBackgroundSpanStyle}>
-                            <span style={lineSpanStyle}>{this.line[1]}</span>
-                        </span>
-                        <span style={numberSpanStyle}>{this.number}</span>
+                <div className="station-symbol TN-station-symbol" style={borderStyle}>
+                    <span style={lineBackgroundSpanStyle}>
+                        <span style={lineSpanStyle}>{this.line[1]}</span>
                     </span>
+                    <span style={numberSpanStyle}>{this.number}</span>
                 </div>
                 {this.DebugInfo("JRCStationSymbol")}
             </div>

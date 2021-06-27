@@ -33,10 +33,11 @@ export class GenericLineSymbol extends GeneralRailSymbol<RailSymbolProps> {
     };
 
     render(): JSX.Element {
-        const backgroundSpanStyle: CSSProperties = {
+        const backgroundStyle: CSSProperties = {
             display: "inline",
             fontFamily: "sans-serif",
             fontSize: this.height,
+            verticalAlign: "middle",
             backgroundColor: this.lineColor,
             border: `0.1em solid`,
             borderColor: this.lineColor
@@ -49,12 +50,10 @@ export class GenericLineSymbol extends GeneralRailSymbol<RailSymbolProps> {
 
         return (
             <div>
-                <div className="line-symbol generic-line-symbol">
-                    <span style={backgroundSpanStyle}>
-                        &nbsp;
-                        <span style={textSpanStyle}>{this.line[1]}</span>
-                        &nbsp;
-                    </span>
+                <div className="line-symbol generic-line-symbol" style={backgroundStyle}>
+                    &nbsp;
+                    <span style={textSpanStyle}>{this.line[1]}</span>
+                    &nbsp;
                 </div>
                 {this.DebugInfo("GenericLineSymbol")}
             </div>
