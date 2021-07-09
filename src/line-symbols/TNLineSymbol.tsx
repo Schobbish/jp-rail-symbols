@@ -1,13 +1,13 @@
 import { CSSProperties } from "react";
-import GenericStationSymbol from "./GenericStationSymbol";
+import GenericLineSymbol from "./GenericLineSymbol";
 
 
 /**
- * Station symbols for Toei Nippori-Toneri Liner
+ * Line symbols for JR East
  *
- * Based on https://en.wikipedia.org/wiki/Template:Toei_Nippori-toneri_Station_Numbering
+ * Based on https://en.wikipedia.org/wiki/Template:JRE_Line_Symbol
  */
-export class TNStationSymbol extends GenericStationSymbol {
+export class TNLineSymbol extends GenericLineSymbol {
     render(): JSX.Element {
         const outerBorderStyle: CSSProperties = {
             display: "inline-block",
@@ -30,45 +30,33 @@ export class TNStationSymbol extends GenericStationSymbol {
             left: `calc(${this.height} * 3 / 50)`,
             width: `calc(${this.height} * 16 / 25)`,
             height: `calc(${this.height} * 16 / 25)`,
-            backgroundColor: "#FFF",
             border: `calc(${this.height} * 2 / 50) solid #6EBE44`,
-            borderRadius: `calc(${this.height} / 50`
+            borderRadius: `calc(${this.height} / 50)`
         };
         const lineSpanStyle: CSSProperties = {
             position: "absolute",
-            top: 0,
+            top: `calc(${this.height} / 10)`,
             left: 0,
-            width: `calc(${this.height} * 16 / 25)`,
-            height: `calc(${this.height} * 6 / 25)`,
-            fontSize: `calc(${this.height} * 6 / 25)`,
-            lineHeight: `calc(${this.height} * 6 / 25)`,
-            textAlign: "center",
-            color: this.textColor
-        };
-        const numberSpanStyle: CSSProperties = {
-            position: "absolute",
-            bottom: `calc(${this.height} / 80)`,
-            left: 0,
-            width: `calc(${this.height} * 16 / 25)`,
+            width: `calc(${this.height} * 33 / 50)`,
             height: `calc(${this.height} * 11 / 25)`,
             fontSize: `calc(${this.height} * 11 / 25)`,
             lineHeight: `calc(${this.height} * 11 / 25)`,
+            textAlign: "center",
             color: this.textColor
         };
 
         return (
             <div>
-                <div className="station-symbol TN-station-symbol" style={outerBorderStyle}>
+                <div className="line-symbol TN-line-symbol" style={outerBorderStyle}>
                     <span style={innerBorderStyle}>
                         <span style={lineSpanStyle}>NT</span>
-                        <span style={numberSpanStyle}>{this.number}</span>
                     </span>
                 </div>
-                {this.DebugInfo("TNStationSymbol")}
+                {this.DebugInfo("TNLineSymbol")}
             </div>
         );
     }
 }
 
 
-export default TNStationSymbol;
+export default TNLineSymbol;
